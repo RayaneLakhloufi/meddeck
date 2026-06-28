@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environnements virtuels
+venv/
+.venv/
+env/
+ENV/
+
+# Flask / instance
+instance/meddeck.db
+instance/*.log
+instance/uploads/
+instance/backups/
+instance/certs/
+instance/secret.key
+
+# Notes internes (non destinées au dépôt public)
+NOTE_GITIGNORE.md
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Variables d'environnement
+.env
+.env.local
+secrets.py
