@@ -44,13 +44,17 @@ Application web de gestion des dispositifs médicaux du bloc opératoire pour le
 ```bash
 git clone https://github.com/RayaneLakhloufi/meddeck.git
 cd meddeck
-pip install flask
+pip install -r requirements.txt
 python run.py
 ```
 
 Ouvrez ensuite [http://localhost:5000](http://localhost:5000) dans votre navigateur.
 
 **Sous Windows**, double-cliquez sur `lancer_meddeck.bat` pour démarrer automatiquement.
+
+Le serveur démarre avec **Waitress** (serveur stable adapté à un usage continu) ; à défaut, il bascule sur le serveur de développement Flask.
+
+> Pour un déploiement d'essai sur site (hôpital), voir **[FICHE_INSTALLATION.md](FICHE_INSTALLATION.md)**.
 
 ### Première connexion
 

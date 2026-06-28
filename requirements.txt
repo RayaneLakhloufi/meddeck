@@ -1,0 +1,4 @@
+# Dépendances MedDeck v2
+Flask>=3.0
+waitress>=3.0        # serveur de production (essai terrain stable)
+# cryptography>=42    # optionnel : uniquement si HTTPS local (génération de certificat)
