@@ -41,7 +41,7 @@ def generate():
 
     subject = issuer = x509.Name([
         x509.NameAttribute(NameOID.COUNTRY_NAME, 'MA'),
-        x509.NameAttribute(NameOID.ORGANIZATION_NAME, 'CHU Mohamed VI - SEBM'),
+        x509.NameAttribute(NameOID.ORGANIZATION_NAME, 'CHU Mohammed VI - SEBM'),
         x509.NameAttribute(NameOID.COMMON_NAME, 'MedDeck'),
     ])
 

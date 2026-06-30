@@ -1,6 +1,6 @@
 # Fiche d'installation — MedDeck v2 (essai terrain)
 
-**Projet :** application de gestion des dispositifs médicaux — Service Biomédical (SEBM), CHU Mohamed VI
+**Projet :** application de gestion des dispositifs médicaux — Service Biomédical (SEBM), CHU Mohammed VI
 **Destinataire :** service informatique / responsable SEBM
 **Type :** essai pilote sur réseau local, sans accès internet requis
 

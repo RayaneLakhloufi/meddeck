@@ -1,6 +1,6 @@
-# MedDeck v2 — CHU Mohamed VI
+# MedDeck v2 — CHU Mohammed VI
 
-Application web de gestion des dispositifs médicaux du bloc opératoire pour le **Service de Biomédical (SEBM)** du CHU Mohamed VI (Maroc).
+Application web de gestion des dispositifs médicaux du bloc opératoire pour le **Service de Biomédical (SEBM)** du CHU Mohammed VI (Maroc).
 
 ---
 
@@ -117,4 +117,4 @@ Une sauvegarde automatique de la base de données et des fichiers uploadés est 
 
 ## Licence
 
-Projet interne — CHU Mohamed VI, Service de Biomédical (SEBM). Usage hospitalier.
+Projet interne — CHU Mohammed VI, Service de Biomédical (SEBM). Usage hospitalier.

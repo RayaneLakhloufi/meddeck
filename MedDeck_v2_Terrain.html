@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="MedDeck">
 <link rel="manifest" href="/manifest.json">
-<title>MedDeck v2 — CHU Mohamed VI</title>
+<title>MedDeck v2 — CHU Mohammed VI</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
@@ -419,7 +419,7 @@ tbody td{padding:10px 14px;font-size:12px}
       <div class="login-icon">🏥</div>
       <span class="login-name">MedDeck</span>
     </div>
-    <div class="login-sub">SEBM — CHU Mohamed VI · Bloc Opératoire<br>v2.0 — Prototype</div>
+    <div class="login-sub">SEBM — CHU Mohammed VI · Bloc Opératoire<br>v2.0 — Prototype</div>
     <div id="login-error" class="login-error"></div>
     <div style="margin-bottom:14px">
       <label class="login-label">Sélectionner votre rôle</label>
@@ -463,7 +463,7 @@ tbody td{padding:10px 14px;font-size:12px}
         <div class="logo-icon">🏥</div>
         <span class="logo-name">MedDeck</span>
       </div>
-      <div class="logo-sub">SEBM — CHU Mohamed VI</div>
+      <div class="logo-sub">SEBM — CHU Mohammed VI</div>
     </div>
     <nav class="nav">
       <div class="nav-section" data-fr="Principal" data-en="Main">Principal</div>
@@ -496,7 +496,7 @@ tbody td{padding:10px 14px;font-size:12px}
         <button class="mobile-menu-btn" id="mobile-btn" onclick="toggleMobileSidebar()">☰</button>
         <div>
           <h1 id="page-title">Dashboard</h1>
-          <p id="page-sub">Bloc opératoire — CHU Mohamed VI</p>
+          <p id="page-sub">Bloc opératoire — CHU Mohammed VI</p>
         </div>
       </div>
       <div class="topbar-right">
@@ -591,7 +591,7 @@ tbody td{padding:10px 14px;font-size:12px}
           </div>
           <div>
             <div id="cl-print-header" class="print-header">
-              <div style="font-size:16px;font-weight:700;color:var(--navy)">CHU Mohamed VI — SEBM</div>
+              <div style="font-size:16px;font-weight:700;color:var(--navy)">CHU Mohammed VI — SEBM</div>
               <div style="font-size:13px;margin-top:4px">Checklist préopératoire — MedDeck v2</div>
             </div>
             <div class="checklist-form" id="cl-form">
@@ -1417,7 +1417,7 @@ function goTo(page){
   document.getElementById('page-'+page)?.classList.add('active');
   document.querySelectorAll('.nav-item[data-page]').forEach(n=>n.classList.toggle('active',n.dataset.page===page));
   const TITLES={dashboard:{fr:'Tableau de bord',en:'Dashboard'},checklists:{fr:'Checklists préopératoires',en:'Preoperative Checklists'},incidents:{fr:'Gestion des incidents',en:'Incident Management'},maintenance:{fr:'Alertes de maintenance',en:'Maintenance Alerts'},equipment:{fr:'Parc d\'équipements',en:'Equipment Inventory'},qrscan:{fr:'Scan QR Code',en:'QR Code Scanner'},contracts:{fr:'Contrats & Paiements',en:'Contracts & Payments'},admin:{fr:'Administration',en:'Administration'}};
-  const SUBS={dashboard:{fr:'Bloc opératoire — CHU Mohamed VI',en:'Operating Theater — CHU Mohamed VI'},checklists:{fr:'Vérification préopératoire des dispositifs critiques',en:'Preoperative check of critical devices'},incidents:{fr:'Signalement et suivi des incidents',en:'Incident reporting and tracking'},maintenance:{fr:'Planification de la maintenance préventive',en:'Preventive maintenance scheduling'},equipment:{fr:'58 équipements référencés — Blocs A, B, C',en:'58 devices — Blocks A, B, C'},qrscan:{fr:'Identification rapide par QR code',en:'Quick QR code identification'},contracts:{fr:'Marchés, interventions planifiées et dossiers de paiement',en:'Contracts, scheduled interventions and payment files'},admin:{fr:'SEBM — Gestion des données',en:'SEBM — Data management'}};
+  const SUBS={dashboard:{fr:'Bloc opératoire — CHU Mohammed VI',en:'Operating Theater — CHU Mohammed VI'},checklists:{fr:'Vérification préopératoire des dispositifs critiques',en:'Preoperative check of critical devices'},incidents:{fr:'Signalement et suivi des incidents',en:'Incident reporting and tracking'},maintenance:{fr:'Planification de la maintenance préventive',en:'Preventive maintenance scheduling'},equipment:{fr:'58 équipements référencés — Blocs A, B, C',en:'58 devices — Blocks A, B, C'},qrscan:{fr:'Identification rapide par QR code',en:'Quick QR code identification'},contracts:{fr:'Marchés, interventions planifiées et dossiers de paiement',en:'Contracts, scheduled interventions and payment files'},admin:{fr:'SEBM — Gestion des données',en:'SEBM — Data management'}};
   document.getElementById('page-title').textContent=TITLES[page]?.[lang]||page;
   document.getElementById('page-sub').textContent=SUBS[page]?.[lang]||'';
   if(page==='incidents') renderIncidents();
@@ -2063,7 +2063,7 @@ function printQR(){
     <h2 style="color:#0f2744">${e.name}</h2>
     <p style="color:#666">${typeof e.model==='object'?e.model.fr:e.model} · ${e.serial||''}</p>
     ${document.getElementById('qr-canvas').innerHTML}
-    <p style="font-size:12px;color:#666;margin-top:10px">CHU Mohamed VI — SEBM · MedDeck v2</p>
+    <p style="font-size:12px;color:#666;margin-top:10px">CHU Mohammed VI — SEBM · MedDeck v2</p>
     <script>window.onload=()=>window.print()<\/script>
   </body></html>`);
   win.document.close();
@@ -2316,7 +2316,7 @@ async function openRapport(){
   body.innerHTML=`
     <div class="report-section print-report-only" style="display:block">
       <div style="text-align:center;padding:16px 0 12px;border-bottom:2px solid var(--navy);margin-bottom:16px">
-        <div style="font-size:16px;font-weight:700;color:var(--navy)">CHU Mohamed VI — Service Biomédical (SEBM)</div>
+        <div style="font-size:16px;font-weight:700;color:var(--navy)">CHU Mohammed VI — Service Biomédical (SEBM)</div>
         <div style="font-size:13px;color:var(--muted);margin-top:4px">Rapport mensuel — ${new Date(rep.month+'-01').toLocaleDateString('fr-FR',{month:'long',year:'numeric'})}</div>
         <div style="font-size:11px;color:var(--muted)">Généré le ${new Date().toLocaleDateString('fr-FR')} par ${currentUser?.name}</div>
       </div>

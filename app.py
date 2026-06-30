@@ -1,4 +1,4 @@
-"""MedDeck v2 — Backend Flask | CHU Mohamed VI SEBM"""
+"""MedDeck v2 — Backend Flask | CHU Mohammed VI SEBM"""
 
 import os, json, hashlib, secrets, sqlite3, logging, unicodedata, shutil
 from datetime import datetime, timedelta
@@ -1054,7 +1054,7 @@ def dashboard():
 @app.route('/manifest.json')
 def manifest():
     return jsonify({
-        "name": "MedDeck — CHU Mohamed VI",
+        "name": "MedDeck — CHU Mohammed VI",
         "short_name": "MedDeck",
         "description": "Gestion dispositifs médicaux — Bloc opératoire",
         "start_url": "/",

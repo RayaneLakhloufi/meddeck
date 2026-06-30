@@ -1,9 +1,9 @@
 @echo off
-title MedDeck — CHU Mohamed VI
+title MedDeck — CHU Mohammed VI
 color 0A
 echo.
 echo  ╔══════════════════════════════════════╗
-echo  ║     MedDeck v2 — CHU Mohamed VI    ║
+echo  ║     MedDeck v2 — CHU Mohammed VI   ║
 echo  ║     Service Biomedical (SEBM)        ║
 echo  ╚══════════════════════════════════════╝
 echo.
