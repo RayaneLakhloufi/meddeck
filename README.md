@@ -35,10 +35,6 @@ Application web de gestion des dispositifs médicaux du bloc opératoire pour le
 
 ## Installation
 
-### Prérequis
-- Python 3.9+
-- pip
-
 ### Option A — Version simple, sans rien installer (recommandée)
 
 Pas besoin de Python ni de ligne de commande :
@@ -53,6 +49,8 @@ L'application démarre et s'ouvre automatiquement dans le navigateur. Au premier
 
 ### Option B — Depuis le code source (développeurs)
 
+Prérequis : **Python 3.9+** et **pip**.
+
 ```bash
 git clone https://github.com/RayaneLakhloufi/meddeck.git
 cd meddeck
@@ -60,13 +58,9 @@ pip install -r requirements.txt
 python run.py
 ```
 
-> Pour reconstruire l'exécutable : double-cliquer sur `build_exe.bat` (génère `dist/MedDeck.exe`).
+Ouvrez ensuite [http://localhost:5000](http://localhost:5000). Sous Windows, vous pouvez aussi double-cliquer sur `lancer_meddeck.bat`.
 
-Ouvrez ensuite [http://localhost:5000](http://localhost:5000) dans votre navigateur.
-
-**Sous Windows**, double-cliquez sur `lancer_meddeck.bat` pour démarrer automatiquement.
-
-Le serveur démarre avec **Waitress** (serveur stable adapté à un usage continu) ; à défaut, il bascule sur le serveur de développement Flask.
+Le serveur démarre avec **Waitress** (serveur stable adapté à un usage continu) ; à défaut, il bascule sur le serveur de développement Flask. Pour reconstruire l'exécutable : double-cliquer sur `build_exe.bat` (génère `dist/MedDeck.exe`).
 
 > Pour un déploiement d'essai sur site (hôpital), voir **[FICHE_INSTALLATION.md](FICHE_INSTALLATION.md)**.
 
