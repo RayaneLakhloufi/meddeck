@@ -7,7 +7,7 @@ Démarre l'application :
 Si un certificat est présent dans instance/certs/, démarre en HTTPS via Flask
 (Waitress ne gère pas le SSL).
 """
-import os
+import os, sys
 from app import app, init_db, migrate_db, auto_backup
 
 PORT = 5000
@@ -16,6 +16,11 @@ PORT = 5000
 init_db()
 migrate_db()
 auto_backup()
+
+# En version .exe (PyInstaller) : ouvrir automatiquement le navigateur
+if getattr(sys, 'frozen', False):
+    import webbrowser, threading
+    threading.Timer(2.0, lambda: webbrowser.open(f'http://localhost:{PORT}')).start()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CERT = os.path.join(BASE_DIR, 'instance', 'certs', 'cert.pem')

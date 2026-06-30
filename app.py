@@ -5,7 +5,18 @@ from datetime import datetime, timedelta
 from functools import wraps
 from flask import Flask, request, jsonify, g, send_from_directory
 
-BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
+import sys
+# Séparation des chemins pour fonctionner aussi en exécutable PyInstaller :
+#  - RESOURCE_DIR : fichiers embarqués en lecture seule (HTML, static)
+#  - DATA_DIR / BASE_DIR : données persistantes (base, sauvegardes, uploads) à côté de l'exe
+if getattr(sys, 'frozen', False):
+    RESOURCE_DIR = sys._MEIPASS
+    DATA_DIR     = os.path.dirname(sys.executable)
+else:
+    RESOURCE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DATA_DIR     = RESOURCE_DIR
+
+BASE_DIR    = DATA_DIR
 DB_PATH     = os.path.join(BASE_DIR, 'instance', 'meddeck.db')
 LOG_PATH    = os.path.join(BASE_DIR, 'instance', 'meddeck.log')
 UPLOAD_DIR  = os.path.join(BASE_DIR, 'instance', 'uploads')
@@ -216,11 +227,29 @@ def seed_default_users(db):
         admin_pin = f"{secrets.randbelow(10000):04d}"
     db.execute('INSERT INTO users (name,role,pin_hash,room) VALUES (?,?,?,?)',
                ('Administrateur SEBM', 'sebm', hash_pin(admin_pin, 'sebm'), 'SEBM'))
-    log.info('=' * 52)
-    log.info('  COMPTE ADMINISTRATEUR SEBM CREE')
-    log.info('  Nom  : Administrateur SEBM     Role : sebm')
-    log.info('  PIN  : %s   (notez-le, changez-le apres connexion)', admin_pin)
-    log.info('=' * 52)
+    banner = (
+        '\n' + '=' * 52 + '\n'
+        '  COMPTE ADMINISTRATEUR SEBM CREE\n'
+        '  Nom : Administrateur SEBM     Role : sebm\n'
+        f'  PIN : {admin_pin}   (notez-le, changez-le apres connexion)\n'
+        + '=' * 52 + '\n'
+    )
+    log.info(banner)
+    # Affichage console (fenetre de l'exe) pour que l'utilisateur voie le PIN
+    try: print(banner, flush=True)
+    except Exception: pass
+    # Fichier texte lisible a cote de l'application (utile en version .exe)
+    try:
+        with open(os.path.join(BASE_DIR, 'IDENTIFIANTS_ADMIN.txt'), 'w', encoding='utf-8-sig') as f:
+            f.write(
+                "MedDeck - compte administrateur\n\n"
+                "Nom d'utilisateur : Administrateur SEBM\n"
+                "Role              : SEBM (administrateur)\n"
+                f"Code PIN          : {admin_pin}\n\n"
+                "Connectez-vous avec ces identifiants, puis changez le PIN\n"
+                "depuis l'administration. Supprimez ce fichier ensuite.\n"
+            )
+    except Exception: pass
     demo = [
         ('Utilisateur IADE',       'iade',       '1234', 'Salle A1'),
         ('Utilisateur IBODE',      'ibode',      '1234', 'Salle B1'),
@@ -1098,9 +1127,9 @@ def download_cert():
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve_frontend(path):
-    if path and os.path.exists(os.path.join(BASE_DIR, 'static', path)):
-        return send_from_directory(os.path.join(BASE_DIR, 'static'), path)
-    html = os.path.join(BASE_DIR, 'MedDeck_v2_Terrain.html')
+    if path and os.path.exists(os.path.join(RESOURCE_DIR, 'static', path)):
+        return send_from_directory(os.path.join(RESOURCE_DIR, 'static'), path)
+    html = os.path.join(RESOURCE_DIR, 'MedDeck_v2_Terrain.html')
     if os.path.exists(html):
         with open(html, 'r', encoding='utf-8') as f:
             return f.read(), 200, {'Content-Type': 'text/html'}

@@ -39,7 +39,19 @@ Application web de gestion des dispositifs médicaux du bloc opératoire pour le
 - Python 3.9+
 - pip
 
-### Étapes
+### Option A — Version simple, sans rien installer (recommandée)
+
+Pas besoin de Python ni de ligne de commande :
+
+1. Aller sur la page **[Releases](https://github.com/RayaneLakhloufi/meddeck/releases)** du dépôt
+2. Télécharger **`MedDeck.exe`**
+3. **Double-cliquer** dessus
+
+L'application démarre et s'ouvre automatiquement dans le navigateur. Au premier lancement, un fichier `IDENTIFIANTS_ADMIN.txt` est créé à côté de l'exécutable avec le compte administrateur et son code PIN.
+
+> Au premier lancement, Windows peut afficher « Windows a protégé votre ordinateur » (éditeur inconnu). Cliquer sur **« Informations complémentaires »** puis **« Exécuter quand même »** — c'est normal pour un logiciel non signé.
+
+### Option B — Depuis le code source (développeurs)
 
 ```bash
 git clone https://github.com/RayaneLakhloufi/meddeck.git
@@ -47,6 +59,8 @@ cd meddeck
 pip install -r requirements.txt
 python run.py
 ```
+
+> Pour reconstruire l'exécutable : double-cliquer sur `build_exe.bat` (génère `dist/MedDeck.exe`).
 
 Ouvrez ensuite [http://localhost:5000](http://localhost:5000) dans votre navigateur.
 
