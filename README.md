@@ -66,6 +66,19 @@ Pour imposer vos propres identifiants, définissez avant le premier lancement :
 
 Des comptes de démonstration (IADE, IBODE, Chirurgien) sont aussi créés pour tester rapidement.
 
+### Accès depuis un téléphone ou une tablette
+
+L'interface est **responsive** et le **scan des QR codes** se fait directement depuis l'appareil mobile — pratique au bloc opératoire.
+
+1. Le téléphone/tablette et le PC serveur doivent être sur le **même réseau Wi-Fi**.
+2. Récupérer l'**adresse IP locale** du PC serveur (affichée au lancement de `lancer_meddeck.bat`, ou via `ipconfig` → ligne *Adresse IPv4*, ex. `192.168.1.11`).
+3. Sur le mobile, ouvrir le navigateur à l'adresse **`http://<IP-du-PC>:5000`** (ex. `http://192.168.1.11:5000`).
+
+> **Pare-feu Windows** : autoriser le port 5000 une seule fois, dans PowerShell **administrateur** :
+> ```powershell
+> New-NetFirewallRule -DisplayName "MedDeck" -Direction Inbound -LocalPort 5000 -Protocol TCP -Action Allow
+> ```
+
 ---
 
 
